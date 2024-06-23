@@ -5,9 +5,9 @@
 - プログラミング学習用に作成したカードゲームです。
 - ナニカ問題がありましたら対応させていただきたいと思います。
 
-![スクリーンショット](https://cdn-ak.f.st-hatena.com/images/fotolife/H/Hiesuke/20240623/20240623110015.png)
+![スクリーンショット](https://cdn-ak.f.st-hatena.com/images/fotolife/H/Hiesuke/20240623/20240623114138.png)
 
-![Animation](https://cdn-ak.f.st-hatena.com/images/fotolife/H/Hiesuke/20240623/20240623105719.gif)
+![Animation](https://cdn-ak.f.st-hatena.com/images/fotolife/H/Hiesuke/20240623/20240623114048.gif)
 
 
 ## 遊び方など
