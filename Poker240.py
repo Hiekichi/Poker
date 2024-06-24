@@ -29,6 +29,9 @@ YAKU_HIGHCARD      = 9
 YAKU_GETMONEY = [10000,5000,2500,900,600,400,300,200,100,0]
 yaku = YAKU_HIGHCARD
 
+bg_image_num = 0
+bg_img = pyxel.Image(240,128)
+
 class App():
     def __init__(self) -> None:
         pyxel.init(240,240,"Poker",fps=24)
@@ -70,7 +73,13 @@ class App():
 
 
     def update(self):
-        global state
+        global state,bg_image_num,bg_img
+
+        ### 画像の切り替え（機能テスト）
+        if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_Y):
+            bg_image_num = (bg_image_num+1)%4
+            if bg_image_num != 0:
+                bg_img.load(0,0, "img{}.png".format(bg_image_num))
 
         ### ゲームオーバー中
         if self.gameover_cnt > 0:
@@ -152,9 +161,13 @@ class App():
     def draw(self):
         pyxel.cls(6)
         ### 背景
-        pyxel.blt(0,0, 1, 0,192, 240,64)
-        pyxel.blt(0,64, 2, 0,192, 240,64)
-        pyxel.blt(10,20,2,192,144,64,48,0)
+        if bg_image_num == 0:
+            pyxel.blt(0,0, 1, 0,192, 240,64)
+            pyxel.blt(0,64, 2, 0,192, 240,64)
+            pyxel.blt(10,20,2,192,144,64,48,0)
+        else:
+            pyxel.blt(0,0, bg_img, 0,0, 240,128)
+            pyxel.blt(160,50,2,192,144,64,48,0)
         ### 持ち点数
         pyxel.blt(206,12, 0, 16,56, 23,5, 0)
         pyxel.blt(200+6*4,20, 0, 16,48, 3,5, 0)
