@@ -76,7 +76,7 @@ class App():
         global state,bg_image_num,bg_img
 
         ### 画像の切り替え（機能テスト）
-        if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_Y):
+        if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_Y) or pyxel.btnp(pyxel.KEY_Y):
             bg_image_num = (bg_image_num+1)%4
             if bg_image_num != 0:
                 bg_img.load(0,0, "img{}.png".format(bg_image_num))
@@ -120,7 +120,7 @@ class App():
         
         ### ゲーム開始待ち
         if state == STATE_WAIT_GAMESTART:
-            if pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.KEY_SPACE) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_START) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
+            if pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.KEY_SPACE) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_START) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B):
                 state = STATE_WAIT_CHANGE
                 self.score -= 100
                 self.kubarichuu_cnt = 25
