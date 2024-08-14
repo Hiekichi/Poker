@@ -34,7 +34,7 @@ bg_img = pyxel.Image(240,128)
 
 class App():
     def __init__(self) -> None:
-        pyxel.init(240,240,"Poker",fps=24)
+        pyxel.init(240,240,title="Poker",fps=24)
         pyxel.load("card.pyxres")
         self.score = 500
         self.init_game()
